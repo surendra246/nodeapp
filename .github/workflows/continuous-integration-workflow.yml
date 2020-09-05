@@ -26,7 +26,7 @@ jobs:
       - name: "Login via Azure CLI"
         uses: Azure/login@v1
         with:
-          creds:  ${{ secrets.AZUREMENODEAPP }}
+          creds:  ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: "Run Azure Functions Action"
         uses: Azure/functions-action@v1
