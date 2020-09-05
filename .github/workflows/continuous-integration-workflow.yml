@@ -13,15 +13,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout"
-        uses: actions/checkout@master
+        uses: actions/checkout@v1
 
       - name: "Setup Node.js"
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
       # This step uses GitHub's hello-world-javascript-action: https://github.com/actions/hello-world-javascript-action
-      - name: npm install
-        run: npm install --production
+      - name: npm install, build, and test
+        run: |
+          # Build and test the project, then
+          # deploy to Azure Web App.
+          npm install
+          npm run build --if-present
+          npm run test --if-present
 
       - name: "Login via Azure CLI"
         uses: Azure/login@v1
