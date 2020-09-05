@@ -8,7 +8,7 @@ const server = http.createServer(function (request, response) {
   response.end(message)
 })
 
-const port = process.env.PORT || 1337
+const port = process.env.PORT || 8080
 server.listen(port)
 
 console.log('Server running at port', port)
