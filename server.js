@@ -1,18 +1,15 @@
-//Load HTTP module
-const http = require("http");
-const hostname = '127.0.0.1';
-const port = 3000;
+const http = require('http')
+const message = 'Hello World from Node\n'
 
-//Create HTTP server and listen on port 3000 for requests
-const server = http.createServer((req, res) => {
+// Configure our HTTP server to respond with Hello World to all requests.
+const server = http.createServer(function (request, response) {
+  console.log('responding with hello')
+  response.writeHead(200, { 'Content-Type': 'text/plain' })
+  response.end(message)
+})
 
-  //Set the response HTTP header with HTTP status and Content type
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World\n');
-});
+const port = process.env.PORT || 1337
+server.listen(port)
 
-//listen for request on port 3000, and as a callback function have the port listened on logged
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+console.log('Server running at port', port)
+console.log(message)
