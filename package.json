@@ -1,0 +1,22 @@
+{
+  "name": "nodeapp",
+  "version": "1.0.0",
+  "description": "CICD Proccess",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/surendra246/nodeapp.git"
+  },
+  "keywords": [
+    "CICD"
+  ],
+  "author": "Surendra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/surendra246/nodeapp/issues"
+  },
+  "homepage": "https://github.com/surendra246/nodeapp#readme"
+}
